@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Selector Basic</title>
+    <style>
+        p{counter-increment: rint;}
+        p::before{content: counter(rint) ".";}
+        p::after{content: "-" attr(data-page) "Page" }
+        p::first-letter{font-size: 3em; color: red;}
+    </style>
+</head>
+<body>
+    <h1>Loren ipsum dolor sit amet</h1>
+    <p data-page="52">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis ad corrupti totam voluptatem est consequuntur, optio minima nihil odit, laborum nostrum incidunt quod. Quos quasi aliquam, pariatur rerum dolor nulla.</p>
+    <p data-page="123">Aenean ac erat et massa vehicula laoreet consequat et sem.</p>
+</body>
+</html>
