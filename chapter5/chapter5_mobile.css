@@ -1,0 +1,147 @@
+@charset "UTF-8";
+/* 컴퓨터 코드를 우리가 알아볼 수 있게 해주는 인코딩 방식 */
+
+/* 초기화 */
+*{margin: 0; padding: 0;}
+body{font-family: 'Helvetica', sans-serif;}
+li{list-style: none;}
+a{text-decoration: none;}
+
+/* 헤더 */
+   /* 상단에 배경 속성 */
+#main_header{
+    height: 45px; /* 이미지의 높이 */
+    background: url("header_background.png");
+    position: relative; /* 자식태그를 위해 지정 */
+    text-align: center;
+    line-height: 45px; /* 수직정렬->전체 큰 틀의 높이와 일치 */ 
+}
+
+   /* 메인 타이틀 제목 속성 */
+#main_header > h1{
+    color: white;
+}
+   /* 서브 타이틀 속성 */
+#main_header > a, #main_header > label{
+    /* a와 label은 inline속성이니까  */
+    /* block은 height, margin, width 모두 적용 가능/ inline은 width, margin좌우만 가능 */
+    display: block;
+    height: 32px;
+    position: absolute;
+}
+#main_header > a.left{
+    /* a.left와 a .left는 다름 */
+    /* 위에서 a와 label을 block으로 바꿔서 width 적용 가능 */
+    width: 62px;
+    /* header의 relative 위치를 기준으로 적용 */
+    left: 5px; top: 7px;
+}
+#main_header > label.right{
+    width: 32px;
+    right: 5px; top: 7px;
+}
+
+/* 스프라이트 이미지 */
+   /* 좌측 상단 버튼 */
+#main_header > a.left{
+    background: url('sprites.png');
+    background-position: 0px 0px;
+    /* 화면에 안보이게 하려고 글자를 화면 밖으로 밀어버리는 역할 */
+    text-indent: -99999px;
+}
+   /*우측 상단 메뉴바 */
+#main_header > label.right{
+    background: url('sprites.png');
+    background-position: -62px 0px;
+    text-indent: -99999px;
+}
+
+/* 토글 목록 */
+   /* 맨 처음 만들었던 체크 박스를 안보이게 지정 */
+#toggle{display: none;}
+   /* 우측 상단 메뉴바를 누르지 않았을때 속성 */
+#toggle + #wrap > #toggle_gnb_wrap{ display: none;}
+   /* 우측 상단 메뉴바를 눌렀을 때 속성 */ 
+#toggle:checked + #wrap > #toggle_gnb_wrap{display: block;}
+
+   /* 버튼바를 눌렀을 때의 배경 지정 */
+#toggle_gnb_wrap{
+    background: #363636;
+    /* 가운데 정렬 */
+    padding: 15px;
+}
+   /* toggle_gnb_wrap안에 있는 toggl_gnb의 배경지정 */
+#toggle_gnb{
+    background: #ffffff;
+    /* 가운데 정렬 */
+    padding: 5px;
+}
+#toggle_gnb > ul{overflow: hidden;}
+#toggle_gnb > ul > li{
+    float: left;
+    width: 80px;
+}
+
+/* 내비게이션_1 */
+   /* 보여지는 메뉴 */
+#top_gnb{
+    overflow: hidden;
+    background: #B42111;
+    border: 1px solid black;}
+#top_gnb > div > a{
+    float: left;
+    width: 25%;
+    /* 꾸며주는 속성 */
+    /* 뒷 배경의 높이 */
+    height: 35px;
+    /* 수직 정렬 */
+    line-height: 35px;
+    /* block 태그에서만 쓸 수 있다 */
+    text-align: center;
+    color: white;
+}
+
+/* 내비게이션_2 */
+#bottom_gnb{
+    /* bottom_gnb 태그를 table처럼 이용하고 싶을 때 사용 */
+    display: table;
+    width: 100%;
+    border-bottom: 1px solid black ;
+}
+#bottom_gnb > div{
+    /* div들을 table의 셀처럼 이용하겠다 */
+    display:table-cell;
+    position: relative;
+
+}
+#bottom_gnb > div > a{
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+}
+   /* a태그 앞에 있는 공간을 선택하겠다 */
+#bottom_gnb >div > a::before{
+    display: block;
+    position: absolute;
+    top: 9px; left: -1px;
+    width: 1px; height: 15px;
+    /* 메뉴바에 있는 각각의 버튼 사이에 있는 선을 위해 지정 */
+    border-left: 1px solid black;
+    content: '';
+}
+
+/* 본문 */
+#section_header{
+    padding: 20px;
+}
+#section_article{
+    padding: 10px;
+}
+
+/* 푸터 */
+#main_footer{
+    padding: 10px;
+    border-top: 3px solid black;
+    text-align: center;
+}
