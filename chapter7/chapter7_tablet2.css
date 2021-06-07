@@ -4,6 +4,7 @@
 
 *{margin: 0; padding: 0;}
 body{font-family: sans-serif;}
+/* 전체화면으로 설정 */
 html, body{height: 100%;}
 
 /* top_bar */
