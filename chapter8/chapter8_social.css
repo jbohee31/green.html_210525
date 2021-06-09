@@ -55,6 +55,7 @@ body{
 #top_gnb > div.item_6{background-position: 0px -250px;}
 #top_gnb > div.item_7{background-position: 0px -300px;}
 
+/* 마우스오버했을 때 다른 이미지가 오기 때문에 position을 다르게 지정 */
 #top_gnb > div.item_1:hover{ background-position: 0px -350px;}
 #top_gnb > div.item_2:hover{ background-position: 0px -400px;}
 #top_gnb > div.item_3:hover{ background-position: 0px -450px;}
@@ -113,6 +114,7 @@ body{
 #bottom_gnb > div.item_8.active { background-position: 0px -1360px; }
 #bottom_gnb > div.item_9.active { background-position: 0px -1440px; }
 #bottom_gnb > div.item_10.active{ background-position: 0px -1520px; }
+
 /* 목록 */
 #detail_list{
     overflow: hidden;
@@ -135,6 +137,8 @@ body{
     overflow: hidden;
     text-overflow: ellipsis;
 }
+/* header에 바로 글자 weight를 줄 수 없는 이유는 li 가 inline태그 이고 
+p태그는 block태그이기 때문에 h1이나 p태그로 지정해줘야 함 */
 #detail_list > ul > li.header{
     padding-left: 15px;
 }
