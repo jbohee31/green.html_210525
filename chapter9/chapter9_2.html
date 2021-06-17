@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition 속성</title>
+    <style>
+        #graph{
+            width: 610px;
+            border: 3px solid black;
+        }
+        .bar{
+            width: 10px;
+            height: 50px;
+            background-color: orange;
+            margin: 5px;
+
+            transition-duration: 2s;
+        }
+        #graph:hover > .bar{
+            width: 600px;
+        }
+        /* transition-delay속성 */
+        /* 변형의 속도로 조절 */
+        /* .bar:nth-child(1){
+            transition-duration:0s;
+        }
+
+        .bar:nth-child(2){
+            transition-duration:1s;
+        }
+        .bar:nth-child(3){
+            transition-duration:2s;
+        }
+        .bar:nth-child(4){
+            transition-duration:3s;
+        }
+        .bar:nth-child(5){
+            transition-duration:4s;
+        } */
+
+        /* transition-timing-function속성 */
+        .bar:nth-child(1){
+            transition-timing-function: linear;
+        }
+        .bar:nth-child(2){
+            transition-timing-function:ease;
+        }
+        .bar:nth-child(3){
+            transition-timing-function: ease-in;
+        }
+        .bar:nth-child(4){
+            transition-timing-function: ease-in-out;
+        }
+        .bar:nth-child(5){
+            transition-timing-function:ease-out;
+        }
+
+        /* cubic-bezier()함수 이용 */
+        .bar:nth-child(1){
+            transition-timing-function: cubic-bezier(0,1,1,0);
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS3 Transition Graph</h1>
+    <div id="graph">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+</body>
+</html>

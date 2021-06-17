@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+*{margin: 0; padding:0};
+body{
+    position: relative;
+}
+#box{
+    position: absolute;
+    width:200px; height: 200px;
+    border-radius: 100px;
+    text-align: center;
+    /* 그라데이션 */
+    background: linear-gradient(#cb60b3 0%, #db36a4 100%);
+
+    /* 만든 키프레임을 animation-name속성으로 연결해준다. */
+    animation-name: rint;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    /* 애니메이션을 반복하고 싶을 때- 숫자로 적거나 infinite(무힌) */
+    animation-iteration-count: infinite;
+    /* 애니메이션 반복하는 형태를 다루는 속성 */
+    /* alternate는 키프레임 from에서 to, 그리소 to에서 from으로,
+    normal은 계속 from에서 to */
+    animation-direction: alternate;
+
+}
+#box:hover{
+    /*애니메이션을 중지하고 재생할 때 사용하는 속성, 일반적으로 자바스크립트를 이용해 조절한다. */
+    animation-play-state: paused;
+}
+
+#box > h1{
+    /* 수직정렬 */
+    line-height: 200px;  
+}
+/* css에서 애니메이션을 지정하는 키프레임 형식/ @keyframes 이름 으로 작성한다. 
+퍼센트로 애니메이션을 적용한다.  */
+@keyframes rint{
+    from{
+        left: 0;
+        /* 안배웠지만 미리사용 */
+        transform: rotate(0deg);
+    }
+    50%{
+        left: 500px;
+    }
+    to{
+        left: 500px;
+        transform: rotate(360deg);
+    }
+}

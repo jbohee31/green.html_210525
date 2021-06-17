@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+.box{
+    width: 100px; 
+    height: 100px;
+    background-color: orange; 
+    /* 보다 부드럽게 변형 효과 */
+    -ms-transition-dutarion:2s;
+    -moz-transition-duration: 2s;
+    -webkit-transition-duration: 2s;
+    transition-duration:2s;
+}
+.box:hover{
+    width: 200px;
+    height: 300px;
+
+}
+.box:active{
+    background-color: red;
+}
