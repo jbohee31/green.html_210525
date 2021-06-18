@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+body{
+    width:200px;
+    margin: 200px auto;
+
+    /*원근법 perspective*/
+    -webkit-perspective:400 ;    /*숫자가 작을 수록 화면에 꽉찬 비율로 원근법 적용*/
+    
+}
+section{
+    width:200px; height: 200px;
+    position: relative;
+
+    /*transform-style속성*/
+    animation: rint 5s linear 0s infinite;    /*transform- style 속성 사용 안했을 때*/
+    transform-style: preserve-3d;  /*속성사용했을 때*/
+}
+
+@keyframes rint{
+    form{
+        transform: rotateX( 0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    to{
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); 
+    }
+}
+div{
+    position: absolute;
+    width:200px; height:200px;
+    left: 0; top: 0;
+
+    /*backface-visibility 속성*/
+    backface-visibility: visible;   /*hidden은 후면을 감춘다*/
+    opacity:0.3;
+}
+/*옆면*/
+div:nth-child(1){ transform: rotateY(0deg) translate3d(0px, 0px, 100px); background: red;}
+div:nth-child(2){ transform: rotateY(90deg) translate3d(0px, 0px, 100px); background: green;}
+div:nth-child(3){ transform: rotateY(180deg) translate3d(0px, 0px, 100px); background: blue;}
+div:nth-child(4){ transform: rotateY(270deg) translate3d(0px, 0px, 100px);background: yellow;}
+
+/*윗면과 아랫면*/
+div:nth-child(5){ transform: rotateX(90deg) translate3d(0px, 0px, 100px); background: brown;}
+div:nth-child(6){ transform: rotateX(270deg) translate3d(0px, 0px, 100px);background: pink;}
+

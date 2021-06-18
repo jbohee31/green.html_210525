@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 웹</title>
+    <style>
+        /*768px은 아이패드가 수직인 상태의 너비
+        960px은 일반적인 웹 페이지의 너비
+        */
+
+        /* 화면 너비 0px~767px */
+        @media screen and (max-width: 767px){
+        /* @media screen and (orientation:portrait){   화면 방향 전환 속성 */
+            html{
+                background: red;
+                color: white; font-weight: bold;
+            }
+        }
+        /*화면 너비 768px~959px*/
+        @media screen and (min-width: 768px) and (max-width:959px){
+        /* @media screen and (orientation: landscape){ */
+            html{
+                background: green;
+                color: white; font-weight: bold;
+            }
+        }
+        /*화면 너비 960px~무한 */
+        @media screen and (min-width:960px){
+            html{
+                background: blue;
+                color: white; font-weight: bold;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Lorem ipsum</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde quibusdam quaerat corporis ducimus ipsam aut dolorum nulla fuga reiciendis libero adipisci voluptas officiis, non totam molestias laudantium. Sit, mollitia illo.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo vero earum similique neque iure culpa cupiditate sapiente consequatur? Quidem laborum vitae deserunt, architecto incidunt vero accusamus laudantium cupiditate non impedit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quisquam iusto pariatur similique recusandae nesciunt deleniti commodi itaque quia, unde, maiores optio magni aperiam voluptatibus consequatur molestias dolore ullam delectus!</p>
+</body>
+</html>
