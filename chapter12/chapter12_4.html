@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3그리드 레이아웃</title>
+
+    <style>
+    /*초기화*/
+        *{
+            margin:0;
+            padding:0;
+        }
+
+        .container{
+            /*너비 고정 및 중앙 정렬*/
+            width: 960px;
+            margin: 0 auto;
+            padding-top: 10px;
+
+            /*그리드 구성*/
+            display: grid;   
+            /* grid-template-columns: 200px 200px; */
+            /* 만약에 비율을 2:1로 나누고 싶다면
+            grid-template-columns: 2fr 1fr; */
+
+            /* 픽셀과 fr함께 사용
+            grid-template-columns: 300px 1fr; */
+
+            /* grid-template-columns: 300px 300px;
+            grid-template-rows: 1fr 2fr; */
+
+            /* 단축해서 사용할 수 있다. 순서는 rows - columns 순이다
+            grid-template: 300px 300px / 1fr 2fr */
+
+            /* 각 grid 사이에 갭을 둘 수 있다.
+            grid-template-columns:  300px 300px;
+            grid-template-rows: 1fr 2fr;
+            grid-gap: 5px; */
+
+            /* grid-template: 200px 200px 200px / 200px 200px 200px;
+            grid-gap: 10px; */
+
+            grid-template: 70px 1fr 70px / 200px 1fr;
+            grid-gap: 5px;
+
+            grid-template-areas:
+            'header header'
+            'aside content'
+            'footer footer';
+        }
+        [class *= cell]{
+            box-sizing: border-box;
+            border: 5px solid black;
+            border-radius: 10px;
+            padding:20px;
+        }
+
+        /* .cell-a{
+            단축형
+            grid-row:1 / 4;
+            grid-column:1 / 3;
+
+            행 세로는 1번부터 4번까지
+            grid-row-start: 1;
+            grid-row-end: 4;
+
+            열 가로는 1번부터 3번까지
+            grid-column-start:1;
+            grid-column-end:3;
+        } */
+
+        /* .cell-header{ grid-column: 1 /3;}
+        .cell-footer{ grid-column: 1 /3;} */
+
+        .cell-header{ grid-area: header;}
+        .cell-aside{ grid-area:aside;}
+        .cell-content{grid-area: content;}
+        .cell-footer{ grid-area: footer;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cell-header">
+            <h1>Header</h1>
+        </div>
+        <div class="cell-aside">
+            <h2>Aside</h2>
+            <p>lorem ipsum</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, iste obcaecati, velit magnam placeat alias pariatur similique deserunt modi ducimus sit rerum mollitia molestiae ullam, nemo ea doloremque nobis voluptatibus!</p>
+        </div>
+        <div class="cell-content">
+            <h1>Lorem ipsum dolor sit amet</h1>
+            <p>lorem ipsum dolor sit amet</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet maiores labore molestias recusandae dolor voluptas dolorem, atque nulla facilis consequatur magnam amet animi! Impedit ad natus molestias. Consequuntur, obcaecati nemo.</p>
+        </div>
+        <div class="cell-footer">
+            <h1>Footer</h1>
+        </div>
+    </div>
+</body>
+</html>
